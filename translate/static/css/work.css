@@ -1,70 +1,150 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/css?family=Lato);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 * {
   padding: 0;
   margin: 0;
   z-index: 0;
-  font-family: "Lato", sans-serif; }
+  font-family: "Lato", sans-serif;
+  cursor: default; }
 
 a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
   text-decoration: none; }
+
+h1 {
+  font-size: 25pt; }
+
+input[type=button],
+input[type=submit] {
+  cursor: pointer; }
 
 ul {
   list-style: none; }
 
-body {
-  background: #A4BCC2; }
+input {
+  cursor: text; }
 
+@-webkit-viewport {
+  width: device-width; }
+@-moz-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@-o-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
 #work_page {
-  position: absolute;
-  width: 600px;
-  top: 0;
+  position: relative;
   left: 50%;
-  margin-left: -332px;
-  padding: 50px 30px;
-  background: #fff;
-  -moz-box-shadow: inset 7px 0 7px -8px #333;
-  -o-box-shadow: inset 7px 0 7px -8px #333;
-  -webkit-box-shadow: inset 7px 0 7px -8px #333;
-  box-shadow: inset 7px 0 7px -8px #333;
-  border-right: 4px solid #C2CBCE;
-  overflow: none; }
-  #work_page .btn {
-    position: relative;
-    top: 60px;
-    left: 445px;
-    width: 135px; }
-    #work_page .btn input[type=button],
-    #work_page .btn input[type=submit] {
-      background: #4B99AD;
-      padding: 8px 15px 8px 15px;
+  margin-top: 30px;
+  margin-left: -300px;
+  width: 600px;
+  height: 650px;
+  border-right: 2px solid #E89867;
+  border-left: 2px solid #E89867; }
+  #work_page form {
+    padding: 30px;
+    height: 100%; }
+    #work_page form .db_num {
+      position: relative;
+      top: 35px;
+      color: #ababab;
+      opacity: 0.6;
+      z-index: -1;
+      font-size: 45pt; }
+    #work_page form .btn_div {
+      position: relative;
+      width: 160px;
+      top: -1px;
+      left: 412px; }
+      #work_page form .btn_div .btn {
+        background: #E89867;
+        padding: 8px 10px 8px 10px;
+        border: none;
+        color: #FFFFFF;
+        margin-left: 5px; }
+    #work_page form .tistory {
+      width: 100%; }
+      #work_page form .tistory .top-210px {
+        position: relative;
+        top: -210px; }
+      #work_page form .tistory textarea {
+        width: 320px; }
+      #work_page form .tistory .story_textarea {
+        position: relative;
+        top: -210px;
+        height: 120px; }
+      #work_page form .tistory .img {
+        position: relative;
+        top: -70px;
+        left: 340px;
+        width: 230px; }
+    #work_page form .etc {
+      position: relative;
+      top: -200px; }
+    #work_page form h2 {
+      font-size: 11pt;
+      color: #356662; }
+    #work_page form textarea {
+      margin-top: 3px;
+      width: 100%;
       border: none;
-      color: #fff;
-      margin-left: 10px; }
-  #work_page form .db_num {
-    position: relative;
-    color: #ababab;
-    opacity: 0.6;
-    z-index: -1;
-    font-size: 45pt;
-    top: 10px; }
-  #work_page form h2 {
-    font-size: 11pt;
-    color: #356662;
-    margin-top: 20px; }
-  #work_page form .img {
-    position: absolute;
-    top: 151px;
-    right: 45px; }
-  #work_page form textarea {
-    margin-top: 3px;
-    width: 350px;
-    border: none;
-    background: #E8F3F8; }
-  #work_page form .title_textarea {
-    height: 50px; }
-  #work_page form .story_textarea {
-    height: 100px; }
-  #work_page form .etc_textarea {
-    width: 105ex;
-    height: 50px; }
+      background: #F8E0D1;
+      opacity: 0.6;
+      cursor: text; }
+    #work_page form .title_textarea {
+      height: 50px; }
+    #work_page form .etc_textarea {
+      height: 50px;
+      margin-bottom: 10px; }

@@ -1,70 +1,83 @@
-@import 'reset';
+@import 'default';
 
-body {
-    background: #A4BCC2;
-}
 #work_page {
-    position: absolute;
-    width: 600px;
-    height: 700px;
-    top: 0;
+    position: relative;
     left: 50%;
-    margin-left: -330px;
-    padding: 50px 30px;
-    background: #fff;
-    -moz-box-shadow: inset 7px 0 7px -8px #333;
-    -o-box-shadow: inset 7px 0 7px -8px #333;
-    -webkit-box-shadow: inset 7px 0 7px -8px #333;
-    box-shadow: inset 7px 0 7px -8px #333;
-    float: left;
-    
-    .db_num {
-        position: absolute;
-        color: #ababab;
-        opacity: 0.6;
-        z-index: -1;
-        font-size: 45pt;
-        top: 10px;
-    }
-
+    margin-top: 30px; 
+    margin-left: -300px;
+    width: 600px;
+    height: 650px;
+    border-right: 2px solid #E89867;
+    border-left: 2px solid #E89867;
     form {
+        padding: 30px;
+        height: 100%;
+        .db_num {
+            position: relative;
+            top: 35px;
+            color: #ababab;
+            opacity: 0.6;
+            z-index: -1;
+            font-size: 45pt;
+        }
+        .btn_div {
+            position: relative;
+            width: 160px;
+            top: -1px;
+            left: 412px;
+            .btn {
+                background: #E89867;
+                padding: 8px 10px 8px 10px;
+                border: none;
+                color: $wt;
+                margin-left: 5px;            
+            }
+        }
+        .tistory {
+            width: 100%;
+            .top-210px {
+                position: relative;
+                top: -210px;
+            }
+            textarea {
+                width: 320px;
+            }
+            .story_textarea {
+                position: relative;
+                top: -210px;
+                height: 120px;   
+            }
+            .img {
+                position: relative;
+                top: -70px;
+                left: 340px;
+                width: 230px;
+            }
+        }
+        .etc {
+            position: relative;
+            top: -200px;
+        }
         h2 {
             font-size: 11pt;
             color: #356662;
-            margin-top: 20px;
         }
-        .btn {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            input[type=button],
-            input[type=submit] {
-                background: #4B99AD;
-                padding: 8px 15px 8px 15px;
-                border: none;
-                color: #fff;            
-            }
-        }
-        .img {
-            position: absolute;
-            top: 50px;
-            right: 45px;
-        }
+        
         textarea {
             margin-top: 3px;
-            width: 30em;
+            width: 100%;
             border: none;
-            background: #E8F3F8;
+            background: #F8E0D1;
+            opacity: 0.6;
+            cursor: text;
         }
         .title_textarea {
-            height: 4em;
+            height: 50px;
         }
-        .story_textarea {
-            height: 10em;   
-        }
+        
         .etc_textarea {
-            width: 54em;
-            height: 5em;
+            height: 50px;
+            margin-bottom: 10px;
         }
     }
 }

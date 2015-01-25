@@ -17,12 +17,8 @@ ALLOWED_EXTENSIONS = ['jpg', 'jpeg']
 
 @home.route('/')
 def main():
-	return render_template('home/main.html',
+	return render_template('home/index.html',
 							current_user=current_user)
-
-@home.route('test')
-def test():
-	return render_template('test.html')
 
 @home.route('image', methods=['GET', 'POST'])
 @login_required

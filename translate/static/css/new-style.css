@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -44,3 +46,53 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+* {
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+  font-family: "Lato", sans-serif;
+  cursor: default; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: none; }
+
+h1 {
+  font-size: 25pt; }
+
+input[type=button],
+input[type=submit] {
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
+input {
+  cursor: text; }
+
+@-webkit-viewport {
+  width: device-width; }
+@-moz-viewport {
+  width: device-width; }
+@-ms-viewport {
+  width: device-width; }
+@-o-viewport {
+  width: device-width; }
+@viewport {
+  width: device-width; }
+.navbar {
+  border-radius: 0;
+  line-height: 25px; }
+  .navbar h1 {
+    font-size: 13pt; }
+  .navbar p {
+    padding-left: 5px; }
+
+.main-pg .page-header h2 {
+  font-size: 12pt;
+  color: #777;
+  padding: 20px; }

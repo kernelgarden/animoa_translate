@@ -1,0 +1,52 @@
+@charset 'utf-8';
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import 'reset';
+
+$wt: #FFFFFF;
+$font: 'Lato', sans-serif;
+
+@mixin bd-rd($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -khtml-border-radius: $radius;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	z-index: 0;
+	font-family: $font;
+	cursor: default;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 25pt;
+}
+input[type=button],
+input[type=submit] {
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+input {
+	cursor: text;
+}
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }

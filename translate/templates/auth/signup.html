@@ -4,29 +4,28 @@
 	<title></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
-    <link href="{{ url_for('static', filename='css/signup.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet" />
 </head>
 <body>
-	<section class="signup_pg">
+	<section class="sign-pg">
+
         <form action="" method="post" class="signup_form">
             <h2>회원가입</h2>
-        	<!--<input type="text" placeholder="Name" required="">-->
-            {{ form.name(class_="user_email", placeholder="이름") }}
-            <br>
-            <!--<input type="text" placeholder="E-mail" required="">-->
-            {{ form.username(class_="user_email", placeholder="아이디") }}
-            <br>
-            <!--<input type="password" placeholder="Password" required="">-->
-            <br>
-            {{ form.password(class_="user_password", placeholder="패스워드") }}
-            <!--<input type="password" placeholder="Confirm Password" required="">-->
-            {{ form.csrf_token }}
+            <div class="form">
+                {{ form.name(class_="user_email", placeholder="이름") }}
+                <br />
+                {{ form.username(class_="user_email", placeholder="아이디") }}
+                <br />
+                {{ form.password(class_="user_password", placeholder="패스워드") }}
+                {{ form.csrf_token }}
+            </div>
             <br>
             <section class="btn">
-                <input type="submit" value="submit" />
-                <a href="{{ url_for('auth.login') }}"><input type="button" name="go_back" value="back" /></a>
+                <a href="{{ url_for('sign_in') }}"><input type="button" name="go_back" value="back" /></a>
+                <input class="submit" type="submit" value="submit" />
             </section>
         </form>
+
     </section>
 </body>
 </html>

@@ -7,34 +7,24 @@
     <title>Animoa:Translate</title>
     {% endif %}	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
     <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='js/jquery-2.1.3.min.js') }}"></script>
 </head>
 <body>
-	<section class="main_container">
-		<section class="main_pg">
-			<form action="" method="post" class="login_form">
-				<h2>DB 한글화 프로젝트</h2>
-				<h1>로그인</h1>
-				<!--<input class="user_email" type="text" placeholder="이메일" required>-->
+	<section class="sign-pg">
+
+		<form action="" method="post" class="login_form">
+			<h2>DB 한글화 프로젝트</h2>
+			<h1>로그인</h1>
+			<div class="input_form">
 				{{ form.username(class_="user_email", placeholder="아이디") }}
-				<br />
-				<!--<input class="user_password" type="password" placeholder="패스워드" required />-->
 				{{ form.password(class_="user_password", placeholder="패스워드") }}
-				<br />
-				<a href="{{ url_for('auth.signup') }}">아직 회원이 아니세요?</a>
-				{{ form.csrf_token }}
-				<input type="submit" value="로그인" />
-			</form>
-		</section>
+			</div>
+			<a href="{{ url_for('auth.signup') }}">아직 회원이 아니세요?</a>
+			{{ form.csrf_token }}
+			<input type="submit" value="로그인" />
+		</form>
+
 	</section>
-	<footer class="bottom-bar">
-		<h1>2015</h1>
-		<h1>Animoa</h1>
-	</footer>
-	<!-- 
-		로그인 폼 뒤에 작업 현황 %
-		배경 이미지
-	-->
 </body>
 </html>

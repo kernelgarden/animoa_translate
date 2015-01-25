@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+
+{% block start %}
+	<section class="work-page container">
+        <form action="" method="POST" class="form-horizontal row" role="form">
+        	<div class="col-md-3">
+	            <!-- if img not -->
+	            <!-- 이미지 업로드 -->
+
+	            <!-- else -->
+	            <img src="#" alt="이미지" class="img-rounded"/>
+        	</div>
+            <div class="form-group col-md-9">
+            	<label>제목(한글)</label>
+            	{{ text }}
+            	<input type="text" class="form-control" name="title" value="기본값"/>
+            </div>
+            <div class="form-group col-md-9">
+            	<label>원제</label>
+            	<input type="text" class="title form-control" name="origin_title" />
+            </div>
+            <div class="form-group col-md-9">
+            	<label>영제</label>
+            	<input type="text" class="title form-control" name="en_title"/>
+            </div>
+            <div class="form-group col-md-9">
+            	<label>부제</label>
+            	<input type="text" class="title form-control" name="sub_title"/>
+            </div>
+
+            <div class="form-group col-md-6">
+            	<label>작품소개</label>
+            	<textarea class="form-control" name="intro"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+            	<label>줄거리</label>
+            	<textarea class="form-control" name="plot"></textarea>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>감독</label>
+            	<input type="text" class="form-control" name="director"/>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>제작사</label>
+            	<input type="text" class="form-control" name="production"/>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>저작권</label>
+            	<input type="text" class="form-control" name="copyright"/>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>총화수(화) [숫자]</label>
+            	<input type="text" class="check-format-episode-num form-control" name="epi_num"/>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>상영시간(분) [숫자]</label>
+            	<input type="text" class="check-format-running-time form-control" name="running_time"/>
+            </div>
+            <div class="form-group col-md-2">
+            	<label>제작년도(년) [숫자 4자리]</label>
+            	<input type="text" class="check-format-year form-control" name="year"/>
+            </div>
+
+            <div class="form-group">
+            	<label>장르</label>
+            	<div class="genre">
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label>등급</label><button id="form-age" type="button" class="glyphicon glyphicon-repeat btn btn btn-default reset-checked-button" onclick=ResetChecked(this.id)></button>
+            	<div class="ba_class">
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label>구분</label><button id="form-category" type="button" class="glyphicon glyphicon-repeat btn btn btn-default reset-checked-button" onclick=ResetChecked(this.id)></button>
+            	<div class="precise">
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label>제작국</label><button id="form-country" type="button" class="glyphicon glyphicon-repeat btn btn btn-default reset-checked-button" onclick=ResetChecked(this.id)></button>
+            	<div class="country">
+	            	<input type="radio" name="nation" value="일본" />일본
+	            	<input type="radio" name="nation" value="미국" />미국
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label>캐릭터</label>
+            	<button type="button" class="add-character btn btn-link">+</button>
+            	<div class="character-form-div"></div>
+            </div>
+            <div class="form-group">
+            	<label>ost</label>
+            	<button type="button" class="add-ost btn btn-link">+</button>
+            	<div class="ost-form-div"></div>
+            </div>
+            <div class="col-md-1 button-div">
+            	<button type="button" class="btn btn-default">Pass</button>
+            	<button type="button" class="form-submit btn btn-primary">Submit</button>
+            </div> 
+        </form>
+    </section>
+    <script src="{{ url_for('static', filename='js/work-set.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/work-file-upload.js') }}"></script>
+    
+{% endblock %}
