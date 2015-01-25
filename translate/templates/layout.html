@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        {% if title %}
+        <title>Animoa:Translate-{{ title }}</title>
+        {% else %}
+        <title>Animoa:Translate</title>
+        {% endif %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body> 
+        <header id="top-bar">
+          <ul>
+            <li><a class="nav" href="{{ url_for('home.main') }}">Main</a>
+            <li><a class="nav" href="{{ url_for('work.start') }}">Translate</a>
+            <li><a class="nav" href="#">Rank</a>
+            {% if current_user.is_authenticated() %}
+            <li><a class="nav" href="{{ url_for('auth.logout') }}">Logout</a>
+            <li><a class="nav login_button" href="#">{{ current_user.name }}</a>
+            {% else %}
+            <li><a class="nav" href="{{ url_for('auth.login') }}">Login</a>
+            {% endif %}
+          </ul>
+        </header>
+        {% block content %}
+        {% endblock %}
+        <script>
+        </script>
+    </body>
+</html>

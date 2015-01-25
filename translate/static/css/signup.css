@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+* {
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+  font-family: "Lato", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+body {
+  background: #A4BCC2; }
+
+.signup_pg {
+  position: absolute;
+  width: 600px;
+  left: 50%;
+  margin-left: -332px;
+  padding: 50px 30px;
+  background: #FFFFFF;
+  border-right: 4px solid #C2CBCE;
+  -moz-box-shadow: inset 7px 0 7px -8px #333;
+  -o-box-shadow: inset 7px 0 7px -8px #333;
+  -webkit-box-shadow: inset 7px 0 7px -8px #333;
+  box-shadow: inset 7px 0 7px -8px #333; }
+  .signup_pg form {
+    text-align: center; }
+    .signup_pg form h2 {
+      color: #333;
+      font-size: 22pt;
+      margin-bottom: 20px; }
+    .signup_pg form input[type=text],
+    .signup_pg form input[type=password] {
+      background: #E8F3F8;
+      padding: 14px;
+      width: 330px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      border: none;
+      margin-top: 30px; }
+    .signup_pg form .btn {
+      margin-top: 70px; }
+      .signup_pg form .btn input[type=button],
+      .signup_pg form .btn input[type=submit] {
+        background: #4B99AD;
+        border: none;
+        color: #FFFFFF;
+        padding: 8px 15px 8px 15px; }
+      .signup_pg form .btn input[type=submit]:first-child {
+        margin-right: 10px; }

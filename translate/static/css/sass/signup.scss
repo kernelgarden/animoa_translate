@@ -1,0 +1,54 @@
+@import 'reset';
+
+body {
+	background: #A4BCC2;
+}
+.signup_pg {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    margin-left: -332px;
+    padding: 50px 30px;
+    background: $wt;
+    border-right: 4px solid #C2CBCE;
+    -moz-box-shadow: inset 7px 0 7px -8px #333;
+    -o-box-shadow: inset 7px 0 7px -8px #333;
+    -webkit-box-shadow: inset 7px 0 7px -8px #333;
+    box-shadow: inset 7px 0 7px -8px #333;
+    form {
+    	h2 {
+    		position: relative;
+    		left: -210px;
+	    	padding: 0 0 15px 70px;
+	    	font-size: 17pt;
+	    	color: #333;
+    	}
+    	text-align: center;
+    	input[type=text],
+    	input[type=password] {
+    		background: #E8F3F8;
+    		padding: 14px;
+    		width: 330px;
+    		@include bd-rd(3px);
+    		border: none;
+    		margin-top: 30px;
+    	}
+    	label {
+    		color: #00f;
+    	}
+    	.btn {
+    		position: absolute;
+    		bottom: 30px;
+    		right: 50px;
+    		input[type=button],
+    		input[type=submit] {
+	    		background: #4B99AD;
+	    		border: none;
+	    		color: $wt;
+	    		padding: 8px 15px 8px 15px;
+	    	}
+	    }
+    }
+}

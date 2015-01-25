@@ -1,0 +1,70 @@
+@import 'reset';
+
+body {
+    background: #A4BCC2;
+}
+#work_page {
+    position: absolute;
+    width: 600px;
+    height: 700px;
+    top: 0;
+    left: 50%;
+    margin-left: -330px;
+    padding: 50px 30px;
+    background: #fff;
+    -moz-box-shadow: inset 7px 0 7px -8px #333;
+    -o-box-shadow: inset 7px 0 7px -8px #333;
+    -webkit-box-shadow: inset 7px 0 7px -8px #333;
+    box-shadow: inset 7px 0 7px -8px #333;
+    float: left;
+    
+    .db_num {
+        position: absolute;
+        color: #ababab;
+        opacity: 0.6;
+        z-index: -1;
+        font-size: 45pt;
+        top: 10px;
+    }
+
+    form {
+        h2 {
+            font-size: 11pt;
+            color: #356662;
+            margin-top: 20px;
+        }
+        .btn {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            input[type=button],
+            input[type=submit] {
+                background: #4B99AD;
+                padding: 8px 15px 8px 15px;
+                border: none;
+                color: #fff;            
+            }
+        }
+        .img {
+            position: absolute;
+            top: 50px;
+            right: 45px;
+        }
+        textarea {
+            margin-top: 3px;
+            width: 30em;
+            border: none;
+            background: #E8F3F8;
+        }
+        .title_textarea {
+            height: 4em;
+        }
+        .story_textarea {
+            height: 10em;   
+        }
+        .etc_textarea {
+            width: 54em;
+            height: 5em;
+        }
+    }
+}
