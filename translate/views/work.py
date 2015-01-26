@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, redirect, url_for, flash,\
 					request, jsonify
 from translate.forms import UsernamePasswordForm, LoginForm
 from flask.ext.login import login_user, login_required, logout_user, current_user
-from translate.models import User, Over_12_anime, Trailer, User_Trailer
+from translate.models import User, Over_12_anime, Trailer, User_Trailer, Characters
 from translate import db
 from translate import ntQueue
 import json
@@ -20,10 +20,24 @@ def start():
 								current_user=current_user)
 	elif request.method == 'POST':
 		db_session = db.session()
-		anime_json = request.get_json(force=True)
-		anime_data = json.loads(anime_json)
+		anime_data = request.get_json(force=True)[0]
+		"""
+		f = open("fuck.debug", "w")
+		f.write(str(type(request.json)) + '\n')
+		f.write(str(request.get_json(force=True)) + '\n')
+		f.write(str(type(request.get_json(force=True))) + '\n')
+		f.write(str(anime_json) + '\n')
+		f.write(str(type(anime_json)))
+		f.write(str(type(anime_json['ani_num'])))
+		f.write('\n' + str(type(anime_json['ani_num'])) + str(anime_json['ani_num']))
+		f.write('\n' + str(anime_json['ani_num']))
+		f.close()
+		return 'fuck'
+		"""
+		
+		#return str(anime_data['title'])
 
-		q = db_session.query(Trailer).filter(Trailer.id == anime_data['ani_id'])
+		q = db_session.query(Trailer).filter(Trailer.id == int(anime_data['ani_num'])).first()
 
 		new_anime = Over_12_anime(title=anime_data['title'],
 								origin_title=anime_data.get('origin_title', ''),
@@ -42,7 +56,7 @@ def start():
 								ost=json.dumps(anime_data.get('ost', [])),
 								plot=anime_data.get('plot', ''),
 								intro=anime_data.get('intro', ''),
-								anime=q)
+								trailer_id=int(anime_data['ani_num']))
 		db_session.add(new_anime)
 		db_session.commit()
 
@@ -51,7 +65,7 @@ def start():
 			for character in characters:
 				new_character = Characters(character_name=character['name'],
 											character_desc=character['desc'],
-											has_image=int(character['has_image']),
+											#has_image=int(character['has_image']),
 											anime=new_anime)
 				db_session.add(new_character)
 		db_session.commit()
@@ -61,15 +75,17 @@ def start():
 		db_session.commit()
 
 		# user 테이블 업데이트
-		q = db_session.query(User).filter(User.id == current_user_id).first()
+		q = db_session.query(User).filter(User.id == current_user.id).first()
 		q.done_cnt += 1
 		db_session.flush()
 		db_session.commit()
 
 		# user_trailer 테이블에 저장
-		user_trailer = User_trailer(user_id=current_user_id, trailer_id=new_anime.trailer_id)
+		user_trailer = User_Trailer(user_id=current_user.id, trailer_id=new_anime.trailer_id)
 		db_session.add(user_trailer)
 		db_session.commit()
+
+		return jsonify({"success": "ok"})
 
 @work.route('/rand_anime', methods=['GET'])
 @login_required

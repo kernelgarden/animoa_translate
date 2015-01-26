@@ -1,0 +1,7 @@
+<type 'list'>
+[{u'precise': u'TV-Movies', u'plot': u'asdf', u'genres': [u'\ub4dc\ub77c\ub9c8'], u'copyright': u'asdf', u'title': u'Oh My Goddess!(OAV)', u'origin_title': u'sdafdsa', u'epi_num': u'324', u'sub_title': u'sdfa', u'ost': [], u'en_title': u'asdfa', u'nation': u'\uc77c\ubcf8', u'director': u'asdf', u'ba_class': u'BA-17', u'production': u'asdf', u'characters': [], u'year': u'3333', u'ani_num': u'53', u'intro': u'asdf', u'running_time': u'2333'}]
+<type 'list'>
+{u'precise': u'TV-Movies', u'plot': u'asdf', u'genres': [u'\ub4dc\ub77c\ub9c8'], u'copyright': u'asdf', u'title': u'Oh My Goddess!(OAV)', u'origin_title': u'sdafdsa', u'epi_num': u'324', u'sub_title': u'sdfa', u'ost': [], u'en_title': u'asdfa', u'nation': u'\uc77c\ubcf8', u'director': u'asdf', u'ba_class': u'BA-17', u'production': u'asdf', u'characters': [], u'year': u'3333', u'ani_num': u'53', u'intro': u'asdf', u'running_time': u'2333'}
+<type 'dict'><type 'unicode'>
+<type 'unicode'>53
+53

@@ -48,6 +48,7 @@ $.get('/work', function() {
 			type: 'POST',
 			url: '/work/',
 			data: jsonString,
+			contentType: "application/json; charset=utf-8",
 			dataType: 'json',
 			success: function(data) {
 				data: jsonString
