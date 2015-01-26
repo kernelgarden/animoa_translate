@@ -1,3 +1,17 @@
+GetRandomAnime = function () {
+	$.ajax({
+    	type: 'GET',
+    	url: '/work/rand_anime',
+    	success: function(data) {
+	        $('.added_ani_num').val(data.ani_num);
+	        $('input[name=title]').val(data.title);
+	        $('.added_genres').append(data.genres.join(', '));
+
+	        $('.added_img').attr('src','/image?ani_num=' + data.ani_num);
+    	}
+    });
+}
+
 PassForm = function() {
 
     $(':input')
@@ -10,37 +24,17 @@ PassForm = function() {
         $(this).remove();
      })
 
-    $.get('/work/rand_anime',function(data) {
-        $('.added_ani_num').val(data.ani_num);
-        $('input[name=title]').val(data.title);
-        $('.added_genres').append(data.genres);
-    });
+     $('.added_genres').html('');
+
+     GetRandomAnime();
 
     $('.title').focus();
 };
 
 $.get('/work', function() {
-	$.get('/work/rand_anime',function(data) {
-		$('.added_ani_num').val(data.ani_num);
-		$('input[name=title]').val(data.title);
-		$('.added_genres').append(data.genres);
-	});
-/*
-	$.get('/image?ani_num=1429', function(data) {
-		$('.added_img').attr('src', "data:image/*;base64," + data);
 
-	})
-
-	$.ajax({
-		type: 'GET',
-		url: '/image?ani_num=1429',
-		dataType: 'image/png',
-		success: function(data) {
-			$('.added_img').attr('src', "data:image/png;base64," + data);
-
-		}
-	});
-	*/
+	GetRandomAnime();
+	
 	$('.form-submit').click(function() {
 		form_data();
 		console.log(jsonString)
