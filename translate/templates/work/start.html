@@ -3,29 +3,29 @@
 {% block start %}
 	<section class="work-page container">
         <form action="" method="POST" class="form-horizontal row" role="form">
-        	<div class="col-md-3">
+        	<div class="col-md-3 img_form">
 	            <!-- if img not -->
 	            <!-- 이미지 업로드 -->
 
 	            <!-- else -->
-	            <img src="#" alt="이미지" class="img-rounded"/>
+	            <img src="#" alt="이미지" class="added_img img-rounded"/>
         	</div>
             <div class="form-group col-md-9">
-            	<label>제목(한글)</label>
+            	<label>제목</label>
             	{{ text }}
-            	<input type="text" class="form-control" name="title" value="기본값"/>
+            	<input type="text" class="title form-control" name="title"/>
             </div>
             <div class="form-group col-md-9">
             	<label>원제</label>
-            	<input type="text" class="title form-control" name="origin_title" />
+            	<input type="text" class="form-control" name="origin_title" />
             </div>
             <div class="form-group col-md-9">
             	<label>영제</label>
-            	<input type="text" class="title form-control" name="en_title"/>
+            	<input type="text" class="form-control" name="en_title"/>
             </div>
             <div class="form-group col-md-9">
             	<label>부제</label>
-            	<input type="text" class="title form-control" name="sub_title"/>
+            	<input type="text" class="form-control" name="sub_title"/>
             </div>
 
             <div class="form-group col-md-6">
@@ -49,20 +49,21 @@
             	<input type="text" class="form-control" name="copyright"/>
             </div>
             <div class="form-group col-md-2">
-            	<label>총화수(화) [숫자]</label>
-            	<input type="text" class="check-format-episode-num form-control" name="epi_num"/>
+            	<label>총화수(화)</label>
+            	<input type="text" class="check-format-episode-num form-control" name="epi_num" placeholder="숫자"/>
             </div>
             <div class="form-group col-md-2">
-            	<label>상영시간(분) [숫자]</label>
-            	<input type="text" class="check-format-running-time form-control" name="running_time"/>
+            	<label>상영시간(분)</label>
+            	<input type="text" class="check-format-running-time form-control" name="running_time" placeholder="숫자"/>
             </div>
             <div class="form-group col-md-2">
-            	<label>제작년도(년) [숫자 4자리]</label>
-            	<input type="text" class="check-format-year form-control" name="year"/>
+            	<label>제작년도(년)</label>
+            	<input type="text" class="check-format-year form-control" name="year" placeholder="숫자 4자리"/>
             </div>
 
             <div class="form-group">
             	<label>장르</label>
+                  <span class="added_genres"></span>
             	<div class="genre">
             	</div>
             </div>
@@ -94,9 +95,10 @@
             	<div class="ost-form-div"></div>
             </div>
             <div class="col-md-1 button-div">
-            	<button type="button" class="btn btn-default">Pass</button>
+            	<button type="button" class="btn btn-default" onclick="PassForm()">Pass</button>
             	<button type="button" class="form-submit btn btn-primary">Submit</button>
-            </div> 
+            </div>
+            <input class="added_ani_num" type="hidden" />
         </form>
     </section>
     <script src="{{ url_for('static', filename='js/work-set.js') }}"></script>

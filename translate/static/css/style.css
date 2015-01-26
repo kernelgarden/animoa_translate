@@ -128,3 +128,6 @@ input {
   font-size: 7pt;
   margin-bottom: 3px;
   margin-left: 3px; }
+.work-page form .added_genres {
+  color: #777;
+  font-size: 12pt; }

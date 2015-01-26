@@ -26,7 +26,7 @@ var CharacterCount = 0;
 $('.add-character').click(function()
     {
         ++CharacterCount;
-        $('.character-form-div').append('<div><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><label>캐릭터 이미지</label><input type="file" name="pic" accept="image/jpg"><div class="character_info"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea id="character-focus-' + CharacterCount + '"class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div></div>');
+        $('.character-form-div').append('<div class="added"><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><label>캐릭터 이미지</label><input type="file" name="pic" accept="image/jpg"><div class="character_info"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea id="character-focus-' + CharacterCount + '"class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div></div>');
         setTimeout(function(){
             $('#character-focus-' + CharacterCount).focus();
         }, 0);
@@ -37,7 +37,7 @@ var OstCount = 0;
 $('.add-ost').click(function()
     {
         ++OstCount;
-        $('.ost-form-div').append('<div><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input id="ost_focus-' + OstCount + '" class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
+        $('.ost-form-div').append('<div class="added"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input id="ost_focus-' + OstCount + '" class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
         setTimeout(function(){
             $('#ost-focus-' + OstCount).focus();
         }, 0);
@@ -50,6 +50,8 @@ var RemoveForm = function(id) {
 var ResetChecked = function(id) {
     $('#'+id).parent().find("input:radio").removeAttr('checked');
 }
+
+
 
 $('.form-submit').click(function()
     {

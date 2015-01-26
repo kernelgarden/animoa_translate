@@ -1,4 +1,4 @@
-$('.form-submit').click(function() {
+form_data = function() {
 	var jsonObj = [];
 
 	// ost value
@@ -53,9 +53,9 @@ $('.form-submit').click(function() {
 		ost: ost_obj,
 		plot: $('textarea[name=plot]').val(),
 		intro: $('textarea[name=intro]').val(),
-		characters: character_obj
+		characters: character_obj,
+        ani_num: $('.added_ani_num').val()
 	})
 
-	var jsonString = JSON.stringify(jsonObj);
-	console.log(jsonString);
-});
+	jsonString = JSON.stringify(jsonObj);
+}
