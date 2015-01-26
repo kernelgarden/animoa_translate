@@ -10,6 +10,8 @@ SQLAlchemy==0.9.8
 WTForms==2.0.2
 Werkzeug==0.9.6
 amqp==1.4.6
+beautifulsoup4==4.3.2
 itsdangerous==0.24
+lxml==3.4.1
 py-bcrypt==0.4
 wsgiref==0.1.2
