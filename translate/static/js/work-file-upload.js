@@ -49,13 +49,13 @@ form_data = function() {
 		precise: precise_value,
 		epi_num: $('input[name=epi_num]').val() * 1,
 		running_time: $('input[name=running_time]').val() * 1, 
-		nation: nation_value, 
+		nation: nation_value,
 		ost: ost_obj,
 		plot: $('textarea[name=plot]').val(),
 		intro: $('textarea[name=intro]').val(),
 		characters: character_obj,
         ani_num: $('.added_ani_num').val()
+        // 애니 캐릭터 이미지 있는지 없는지 여부
 	})
-
 	jsonString = JSON.stringify(jsonObj);
 }

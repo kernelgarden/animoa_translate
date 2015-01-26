@@ -2,3 +2,7 @@ venv/
 *.pyc
 .DS_Store
 config.py
+<<<<<<< HEAD
+=======
+img/
+>>>>>>> 5cbba1314a7875ffbf1cfd673f04f125ca420601
