@@ -16,7 +16,7 @@ work = Blueprint('work', __name__,
 @login_required
 def start():
 	if request.method == 'GET':
-		return render_template('work/work.html',
+		return render_template('work/start.html',
 								current_user=current_user)
 	elif request.method == 'POST':
 		db_session = db.session()

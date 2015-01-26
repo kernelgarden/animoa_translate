@@ -1,99 +1,115 @@
-@import 'reset';
+@import 'default';
 
-body {
-    background: #E8F3F8;
+html {
+    background: #FEFDED;
+    color:#808080;
 }
-.main_container {
-    background: #E8F3F8;
-    width: auto;
-    height: 700px;
-    .main_pg {
-        position: relative;
-        top: 100px;
-        left: 50%;
-        margin-left: -225px;
-        width: 450px;
-        height: 450px;
-        background: #fff;
-        border: 5px solid #DBE6EC;
-        border-radius: 225px;
-        -webkit-border-radius: 225px;
-        -moz-border-radius: 225px;
-        -khtml-border-radius: 225px;
+.sign-pg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 450px;
+    margin-top: -225px;
+    margin-left: -225px;
+    text-align: center;
+    background: #fff;
+    border: 5px solid #F8E0D1;
+    @include bd-rd(225px);
 
-        -moz-box-shadow: 0 0 20px -5px #333;
-        -o-box-shadow: 0 0 20px -5px #333;
-        -webkit-box-shadow: 0 0 20px -5px #333;
-        box-shadow: 0 0 20px -5px #333;
+    -moz-box-shadow: 0 0 20px -5px #333;
+    -o-box-shadow: 0 0 20px -5px #333;
+    -webkit-box-shadow: 0 0 20px -5px #333;
+    box-shadow: 0 0 20px -5px #333;
+}
+
+// login page
+.login_form {
+    position: relative;
+    font-size: 12pt;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -120px;
+    margin-left: -150px;
+    h2 {
+        font-size: 18pt;
     }
-    .login_form {
+    h1 {
         position: relative;
-        font-size: 12pt;
-        width: 300px;
-        height: 300px;
-        top: 50%;
-        left: 50%;
-        margin-top: -135px;
-        margin-left: -150px;
-        color:#808080;
-        h2 {
-            font-size: 18pt;
-            text-align: center;
-        }
-        h1 {
-            position: relative;
-            top: 35px;
-            left: 50px;
-            font-size: 17pt;
-        }
+        top: 30px;
+        left: -70px;
+        font-size: 14pt;
+    }
+    .input_form {
+        position: relative;
+        top: 40px;
         input[type=text],
         input[type=password] {
-            position: relative;
-            top: 40px;
-            left: 50%;
-            margin-top: 10px;
-            margin-left: -100px;
             box-sizing: border-box;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             padding: 10px;
-            outline: none;
             width: 200px;
             height: 40px;
-        }
-        a {
-            position: relative;
-            color: #808080;
-            font-size: 9pt;
-            top: 70px;
-            left: 50px;
-        }
-        input[type=submit] {
-            position: relative;
-            top: 70px;
-            left: 65px;
-            background: #4B99AD;
-            padding: 8px 15px 8px 15px;
-            border: none;
-            color: #fff;
-        }
+            margin-top: 8px;
+        }    
+    }
+    a {
+        position: relative;
+        top: 60px;
+        left: -5px;
+        color: #808080;
+        font-size: 9pt;
+    }
+    input[type=submit] {
+        position: relative;
+        top: 60px;
+        left: 4px;
+        background: #E89867;
+        padding: 8px 15px 8px 15px;
+        border: none;
+        color: #fff;
     }
 }
+// sign up page
+.signup_form {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -135px;
+    margin-left: -150px;
 
-.bottom-bar {
-    z-index: 9999;
-    padding: 30px;
-    width: auto;
-    height: 50px;
-    background: #81A8B8;
-    -moz-box-shadow: inset 0 6px 12px -8px #333;
-    -o-box-shadow: inset 0 6px 12px -8px #333;
-    -webkit-box-shadow: inset 0 6px 12px -8px #333;
-    box-shadow: inset 0 6px 12px -8px #333;
-    
-    h1 {
-        color: #DBE6EC;
-        float: left;
-        padding-right: 20px;
+    h2 {
+        font-size: 18pt;
+    }
+    .form {
+        position: relative;
+        top: 20px;
+        input[type=text],
+        input[type=password] {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 10px;
+            width: 200px;
+            height: 40px;
+            margin-top: 8px;
+        }
+    }   
+    input[type=submit],
+    input[type=button] {
+        position: relative;
+        top: 40px;
+        background: #E89867;
+        padding: 8px 15px 8px 15px;
+        border: none;
+        color: #fff;
+    }
+    .submit {
+        margin-left: 10px;
     }
 }
