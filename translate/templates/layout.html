@@ -31,6 +31,8 @@
 
     {% block start %}
     {% endblock %}
+    <script src="http://www.stalk.io/stalk.js"></script>
+    <script>STALK.init();</script>
     <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
 </body>
 </html>

@@ -9,6 +9,8 @@ GetRandomAnime = function () {
 
 	        $('.added_img').attr('src','/image?ani_num=' + data.ani_num);
 
+	        $('.added_img').css({ 'opacity': '1'});
+
     	}
     });
 }

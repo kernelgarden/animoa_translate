@@ -92,14 +92,21 @@ input {
   .navbar p {
     padding-left: 5px; }
 
-.main-pg .page-header h2 {
+.main-pg h2 {
   font-size: 12pt;
   color: #777;
   padding: 20px; }
+.main-pg .progress {
+  margin-left: 20px;
+  margin-right: 20px; }
+  .main-pg .progress .progress-bar {
+    background: #DDD; }
 
 .work-page form .form-group {
   margin: 0 0 15px 0; }
-.work-page form img {
+.work-page form .added_img {
+  opacity: 0;
+  max-width: 100%;
   height: 180px; }
 .work-page form textarea {
   cursor: text;
@@ -131,3 +138,15 @@ input {
 .work-page form .added_genres {
   color: #777;
   font-size: 12pt; }
+.work-page form .ost_info {
+  position: relative;
+  top: 10px; }
+.work-page form .added {
+  margin-top: 10px; }
+.work-page form .add-btn {
+  color: #777;
+  padding: 3px 8px 0 8px;
+  margin-left: 5px; }
+.work-page form .add-btn:hover,
+.work-page form .add-btn:focus {
+  text-decoration: none; }

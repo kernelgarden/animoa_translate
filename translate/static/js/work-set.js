@@ -7,13 +7,13 @@ var genre =
     '서부영화', '성인물', '스릴러', '스포츠', '시대물',
     '아동물', '액션', '어드벤쳐', '위인전', '전쟁물',
     '코메디', '클레이메이션', '학원물', '호러물', '판타지',
-    '변신', 'BL(Boys Love)'
+    '변신', 'BL', '일상'
 ];
 
 var precise =
 [
     'TV', 'TV-Movies', 'OVA', 'ONA', 'Movie',
-    'Game', 'Music Video'
+    'Game', 'Music Video', 'PV'
 ];
 
 var ba_class =
@@ -32,23 +32,15 @@ for(var i=0; i < precise.length; i++)
     $('.precise').append('<input type="radio" name="precise" value="' + precise[i] + '" />' + '<label>' + precise[i] + '</label>');
 
 var CharacterCount = 0;
-$('.add-character').click(function()
+$('.add-character-btn').click(function()
     {
-        ++CharacterCount;
-        $('.character-form-div').append('<div class="added character_info"><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><label>캐릭터 이미지</label><input class="added_character_img" type="file" name="pic" accept="image/jpg"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea id="character-focus-' + CharacterCount + '"class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div>');
-        setTimeout(function(){
-            $('#character-focus-' + CharacterCount).focus();
-        }, 0);
+        $('.character-form-div').append('<div class="added character_info"><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><label>캐릭터 이미지</label><input class="added_character_img" type="file" name="pic" accept="image/jpg"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div>');
     });
 
 var OstCount = 0;
-$('.add-ost').click(function()
+$('.add-ost-btn').click(function()
     {
-        ++OstCount;
-        $('.ost-form-div').append('<div class="added"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input id="ost-focus-' + OstCount + '" class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
-        setTimeout(function(){
-            $('#ost-focus-' + OstCount).focus();
-        }, 0);
+        $('.ost-form-div').append('<div class="added"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
     });
 
 var RemoveForm = function(id) {
@@ -211,13 +203,6 @@ $('.form-submit').click(function()
 
 });
 
-
-$(window).keydown(function(event){
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      return false;
-    }
-});
 
 
 

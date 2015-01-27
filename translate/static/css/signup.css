@@ -121,5 +121,8 @@ input {
         border: none;
         color: #FFFFFF;
         padding: 8px 15px 8px 15px; }
+      .signup_pg form .btn .back_btn {
+        position: relative;
+        left: -2px; }
       .signup_pg form .btn input[type=submit]:first-child {
         margin-right: 10px; }

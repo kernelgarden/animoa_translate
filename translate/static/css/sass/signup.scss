@@ -43,6 +43,10 @@
 	    		padding: 8px 15px 8px 15px;
 	    	}
 
+            .back_btn {
+                position: relative;
+                left: -2px;
+            }
             input[type=submit]:first-child {
                 margin-right: 10px
             }
