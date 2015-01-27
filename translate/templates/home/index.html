@@ -26,11 +26,13 @@
 			<td>이름
 			<td>작업한 횟수
 		</thead>
+		{% for user in users %}
 		<tbody>
-			<td>1
-			<td>이제현
-			<td>500
+			<td>{{ user.id }}
+			<td>{{ user.name }}
+			<td>{{ user.done_cnt }}
 		</tbody>
+		{% endfor %}
 	</table>
 </section>
 {% endblock %}

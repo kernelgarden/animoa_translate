@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, url_for, jsonify, request, abort, 
 from flask.ext.login import login_user, login_required, logout_user, current_user
 from translate.models import User
 from translate import db, app
-from translate.models import Over_12_anime
+from translate.models import Over_12_anime, User
 
 import os
 
@@ -20,9 +20,11 @@ def main():
 	ses = db.session()
 	q = ses.query(Over_12_anime).filter(Over_12_anime.id >= 1194).all()
 	progress = (len(q)/1193.0) * 100
+	users = ses.query(User).order_by(User.done_cnt.desc()).all()
 	return render_template('home/index.html',
 							current_user=current_user,
-							progress=progress)
+							progress=progress,
+							users=users)
 
 @home.route('image', methods=['GET', 'POST'])
 @login_required
