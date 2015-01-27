@@ -17,8 +17,12 @@ ALLOWED_EXTENSIONS = ['jpg', 'jpeg']
 
 @home.route('/')
 def main():
+	ses = db.session()
+	q = ses.query(Over_12_anime).filter(Over_12_anime.id >= 1194).all()
+	progress = (len(q)/1193.0) * 100
 	return render_template('home/index.html',
-							current_user=current_user)
+							current_user=current_user,
+							progress=progress)
 
 @home.route('image', methods=['GET', 'POST'])
 @login_required
