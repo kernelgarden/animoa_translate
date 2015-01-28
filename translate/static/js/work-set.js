@@ -34,12 +34,14 @@ for(var i=0; i < precise.length; i++)
 var CharacterCount = 0;
 $('.add-character-btn').click(function()
     {
-        $('.character-form-div').append('<div class="added character_info"><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><label>캐릭터 이미지</label><input class="added_character_img" type="file" name="pic" accept="image/jpg"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div>');
+        CharacterCount++;
+        $('.character-form-div').append('<div class="added character_info"><button type="button" id="character-'+ CharacterCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick="RemoveForm(this.id)"></button><label>캐릭터 이미지</label><input class="added_character_img" type="file" name="pic" accept="image/jpg"><input class="cha_name add-form form-control col-md-6" type="text" placeholder="캐릭터 이름" /><input class="cha_voice add-form form-control col-md-6" type="text" placeholder="성우" /><textarea class="cha_desc add-form form-control col-md-12" placeholder="캐릭터 설명"></textarea></div>');
     });
 
 var OstCount = 0;
 $('.add-ost-btn').click(function()
     {
+        OstCount++;
         $('.ost-form-div').append('<div class="added"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
     });
 
