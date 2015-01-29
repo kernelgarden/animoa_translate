@@ -42,7 +42,7 @@ var OstCount = 0;
 $('.add-ost-btn').click(function()
     {
         OstCount++;
-        $('.ost-form-div').append('<div class="added"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><div class="ost_info"><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div></div>');
+        $('.ost-form-div').append('<div class="added ost_info"><button type="button" id="ost-'+ OstCount + '" class="minus-button glyphicon glyphicon-minus btn btn-default" onclick=RemoveForm(this.id)></button><select class="ost_type"><option value="1">오프닝</option><option value="2">엔딩</option><option value="3">수록곡</option></select><input class="ost_name add-form form-control" type="text" placeholder="곡 이름" /></div>');
     });
 
 var RemoveForm = function(id) {
@@ -57,8 +57,11 @@ var ResetChecked = function(id) {
 ClearForm = function() {
 
     $(':input')
+     .not(':button, :submit, :reset, :hidden, :checkbox, :radio')
+     .val('');
+
+    $(':input')
      .not(':button, :submit, :reset, :hidden')
-     .val('')
      .removeAttr('checked')
      .removeAttr('selected');
 
@@ -78,7 +81,7 @@ form_data = function() {
     var ost_obj = [];
     $(".ost_info").each(function() {
         var ost_name = $(this).children('.ost_name').val();
-        var ost_type = $(this).children('.ost_type option:selected').val();
+        var ost_type = $(this).find('.ost_type option:selected').val();
         
         var item = {};
         item["name"] = ost_name;
