@@ -47,10 +47,11 @@ def ret_anime_chunk():
 		query = []
 		genre_list = [genre_lookup[key] for (key, val) in genre_lookup.items() if genre & key]
 		for genre in genre_list:
-			genre.replace(' ', '%')
-			query.append(' genres like "%{0}%"'.format(genre))
+			genre = unicode(genre.replace(' ', '%'))
+			query.append(unicode(' genres like "%{0}%"'.format(genre)))
 		query_string += ' or '.join(query)
-		q = ses.query(Over_12_anime).from_statement(query_string+"group by trailer_id").all()
+		q = ses.query(Over_12_anime).from_statement(query_string+" group by trailer_id").all()
+		#return (q[0].title + q[0].genres)
 		total_data = len(q)
 		return str(len(q))
 

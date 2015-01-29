@@ -26,6 +26,12 @@ def main():
 							progress=progress,
 							users=users)
 
+@home.route('/search', methods=['GET'])
+@login_required
+def search():
+	return render_template('home/search.html',
+							current_user=current_user)
+
 @home.route('image', methods=['GET', 'POST'])
 @login_required
 def drive_image():
