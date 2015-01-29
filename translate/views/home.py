@@ -26,7 +26,7 @@ def main():
 							progress=progress,
 							users=users)
 
-@home.route('/search', methods=['GET'])
+@home.route('search', methods=['GET'])
 @login_required
 def search():
 	return render_template('home/search.html',
