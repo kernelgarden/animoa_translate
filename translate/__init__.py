@@ -25,10 +25,12 @@ ntQueue = NtranslateQueue(db.session())
 from .views.home import home
 from .views.auth import auth
 from .views.work import work
+from .views.api import api
 
 app.register_blueprint(home)
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(work, url_prefix='/work')
+app.register_blueprint(api, url_prefix='/api')
 
 @login_manager.user_loader
 def load_user(userid):
