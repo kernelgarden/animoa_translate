@@ -57,6 +57,10 @@ var ResetChecked = function(id) {
 ClearForm = function() {
 
     $(':input')
+     .not(':button, :submit, :reset, :hidden, :checkbox, :radio')
+     .val('');
+
+    $(':input')
      .not(':button, :submit, :reset, :hidden')
      .removeAttr('checked')
      .removeAttr('selected');
