@@ -76,32 +76,35 @@ def ret_anime_chunk():
 	}	
 	#q = ses.query(Over_12_anime).filter(Over_12_anime.id >= 1194).all()
 
+	res['data'] = []
 	for idx in range(start_idx, end_idx + 1):
 		anime = q[idx]
-		res['data'][anime.id] = {}
-		res['data'][anime.id]['title'] = anime.title
-		res['data'][anime.id]['origin_title'] = anime.origin_title
-		res['data'][anime.id]['en_title'] = anime.en_title
-		res['data'][anime.id]['sub_title'] = anime.sub_title
-		res['data'][anime.id]['director'] = anime.director
-		res['data'][anime.id]['production'] = anime.production
-		res['data'][anime.id]['copyright'] = anime.copyright
-		res['data'][anime.id]['genres'] = []
+		temp = {}
+		temp['origin_id'] = anime.trailer_id
+		temp['title'] = anime.title
+		temp['origin_title'] = anime.origin_title
+		temp['en_title'] = anime.en_title
+		temp['sub_title'] = anime.sub_title
+		temp['director'] = anime.director
+		temp['production'] = anime.production
+		temp['copyright'] = anime.copyright
+		temp['genres'] = []
 		for genre in json.loads(anime.genres):
-			res['data'][anime.id]['genres'].append(genre.encode('utf-8'))
-			#res['data'][anime.id]['genres'] = anime.genres
-		res['data'][anime.id]['year'] = int(anime.year)
-		res['data'][anime.id]['ba_class'] = anime.ba_class
-		res['data'][anime.id]['precise'] = anime.precise
-		res['data'][anime.id]['epi_num'] = int(anime.epi_num)
-		res['data'][anime.id]['running_time'] = int(anime.running_time)
-		res['data'][anime.id]['nation'] = anime.nation
-		res['data'][anime.id]['plot'] = anime.plot
-		res['data'][anime.id]['intro'] = anime.intro
-		res['data'][anime.id]['origin_id'] = anime.trailer_id
-		res['data'][anime.id]['characters'] = {}
+			temp['genres'].append(genre.encode('utf-8'))
+			#temp['genres'] = anime.genres
+		temp['year'] = int(anime.year)
+		temp['ba_class'] = anime.ba_class
+		temp['precise'] = anime.precise
+		temp['epi_num'] = int(anime.epi_num)
+		temp['running_time'] = int(anime.running_time)
+		temp['nation'] = anime.nation
+		temp['plot'] = anime.plot
+		temp['intro'] = anime.intro
+		temp['characters'] = {}
 
 		for c in anime.characters:
-			res['data'][anime.id]['characters'][c.character_name] = c.character_desc
+			temp['characters'][c.character_name] = c.character_desc
+
+		res['data'].append(temp)
 
 	return jsonify(res)
