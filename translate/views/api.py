@@ -98,6 +98,7 @@ def ret_anime_chunk():
 		res['data'][anime.id]['nation'] = anime.nation
 		res['data'][anime.id]['plot'] = anime.plot
 		res['data'][anime.id]['intro'] = anime.intro
+		res['data'][anime.id]['origin_id'] = anime.trailer_id
 		res['data'][anime.id]['characters'] = {}
 
 		for c in anime.characters:
