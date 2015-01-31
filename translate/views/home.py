@@ -42,7 +42,8 @@ def drive_image():
 
 		file_name = "static/img/" + str(ani_num) + "/" + str(ani_num) + ".jpg"
 		if not os.path.isfile(os.path.join(app.root_path, file_name)):
-			return send_file("static/img/ene_love.gif", mimetype='image/gif')
+			#return send_file("static/img/ene_love.gif", mimetype='image/gif')
+			return send_file("static/img/holo_sd.png", mimetype='image/png')
 		return send_file(file_name, mimetype='image/jpg')
 	elif request.method == 'POST':
 		# 0: 애니메이션, 1: 캐릭터
